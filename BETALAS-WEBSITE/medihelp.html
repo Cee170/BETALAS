@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MediHelp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
+<style>
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  .animate-left {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .animate-right {
+    animation: scroll-right 20s linear infinite;
+  }
+
+  .text-stroke-white {
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+  }
+</style>
+
+<style>
+  .fade-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+ <style>
+    @keyframes pulseZoom {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+
+    .animate-pulse-zoom {
+      animation: pulseZoom 2.5s ease-in-out infinite;
+    }
+  </style>
+
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeEls = document.querySelectorAll(".fade-scroll");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
+<body class="bg-[#faf5dc]">
+
+  <!-- Header -->
+<section class="py-16 px-6 bg-[#45a365] fade-scroll">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+   
+    <div class="bg-[#faf5dc] p-8 rounded-lg shadow-md text-center">
+      <h2 class="text-4xl font-bold mb-4 text-black">About Me</h2>
+      <p class="text-lg text-black leading-relaxed">
+        Hi! I'm Mikaela Betalas A student of Our Lady of Fatima University and this project is created to educate everyone on how to give proper first aid in emergency situations.
+        This site presents essential information and video demonstrations on how to respond to common injuries and medical emergencies.
+      </p>
+    </div>
+
+    
+    <div class="bg-[#388e5a] p-8 rounded-lg shadow-md text-center text-white">
+      <h2 class="text-4xl font-bold mb-4">Helpful Links</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        Here are some of the best resources where you can learn more about First Aid, CPR, and emergency response:
+      </p>
+      <div class="flex flex-col space-y-4">
+        <a href="https://cpr.heart.org" target="_blank" class="underline hover:text-yellow-200">American Heart Association</a>
+        <a href="https://www.redcross.org" target="_blank" class="underline hover:text-yellow-200">Red Cross First Aid Guide</a>
+        <a href="https://www.nhs.uk/conditions/first-aid/" target="_blank" class="underline hover:text-yellow-200">NHS First Aid Advice</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <div class="min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 py-12 space-y-10 lg:space-y-0 lg:space-x-20 bg-[#faf5dc] -mt-8">
+    <img src="357368000_677877627704058_7382050720025723612_n-removebg-preview.png" alt="Fatima Logo" class="w-60 h-auto lg:w-72">
+
+    <div class="h-48 border-l-4 border-black hidden lg:block"></div>
+
+    <h1 class="text-[12vw] lg:text-[10vw] font-extrabold text-[#45a365] text-center leading-tight" style="-webkit-text-stroke: 2px black;">
+      MEDIHELP
+    </h1>
+  </div>
+</div>
+
+
+<div class="bg-[#388e5a] p-8 rounded-lg shadow-md text-center text-white"></div>
+  <section class="py-16 px-6 flex flex-col lg:flex-row justify-center items-center gap-12 fade-scroll">
+    <div class="max-w-md text-center lg:text-left">
+      <div class="bg-[#fbd436] px-6 py-4 border border-black inline-block font-extrabold text-2xl lg:text-3xl mb-6">
+        WHAT IS THE PURPOSE OF <br> FIRST AID?
+      </div>
+      <p class="text-lg leading-relaxed text-black">
+        The purpose of first aid is to provide immediate and temporary care to a person who is injured or suddenly taken ill, before professional medical help is available.
+        <br><br>
+        The main goals can be summarized as the 3 Ps:
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-6 w-full max-w-sm">
+      <div class="bg-[#fbd436] text-black font-extrabold text-center text-2xl px-4 py-5 border border-black">
+        PRESERVE LIFE
+      </div>
+      <div class="bg-[#fbd436] text-black font-extrabold text-center text-2xl px-4 py-5 border border-black">
+        PREVENT <br> FURTHER HARM
+      </div>
+      <div class="bg-[#fbd436] text-black font-extrabold text-center text-2xl px-4 py-5 border border-black">
+        PROMOTE <br> RECOVERY
+      </div>
+    </div>
+  </section>
+
+<div class="bg-[#388e5a] p-8 rounded-lg shadow-md text-center text-white"></div>
+
+
+<section class="bg-[#faf5dc] py-12 px-6 fade-scroll">
+  <div class="flex justify-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl">
+
+ 
+  <a href="CPR.html" class="block bg-white rounded-lg shadow-md overflow-hidden w-72 hover:shadow-xl transition">
+  <img src="cpr-training.jpg" alt="CPR" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-lg font-bold mb-2">Cardiopulmonary resuscitation (CPR)</h3>
+    <p class="text-sm text-gray-700">
+      CPR use when a person is unconscious, not breathing, or not breathing normally (like gasping), and they have no pulse or show no signs of life.
+    </p>
+  </div>
+</a>
+
+  
+      
+      <a href ="BLEEDING.html" class="block bg-white rounded-lg shadow-md overflow-hidden w-72 hover:shadow-xl transition">
+        <img src="providing-first-aid-park-man-bandaged-injured-arm-guy-helps-friend.jpg" alt="Dentistry" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Bleeding Control (Hemorrhage Control)</h3>
+          <p class="text-sm text-gray-700">Bleeding control is often part of first aid, trauma care, or Stop the Bleed® training programs. If you're interested, I can guide you through simple techniques or recommend what supplies you should keep in a bleeding control kit.</p>
+        </div>
+     </a>
+
+      
+      <a href ="CHOKING.html" class="block bg-white rounded-lg shadow-md overflow-hidden w-72 hover:shadow-xl transition">
+        <img src="senior-female-asian-suffering-from-bad-pain-his-chest-heart-attack-home-senior-heart-disease.jpg" alt="Med (Intl)" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Choking First Aid</h3>
+          <p class="text-sm text-gray-700">Choking relief is used the moment someone shows signs of a blocked airway—especially if they can't speak, cough, or breathe. Acting quickly with back blows, abdominal thrusts, or CPR can save a life. Always call emergency services if the object isn’t cleared or if the person becomes unresponsive.d.</p>
+        </div>
+    </a>
+
+      
+      <a href ="BURNING.html" class="block bg-white rounded-lg shadow-md overflow-hidden w-72 hover:shadow-xl transition">
+        <img src="healthcare-concept-clinic.jpg" alt="Med (PH)" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Burn First Aid</h3>
+          <p class="text-sm text-gray-700">Burn first aid focuses on cooling the burn, protecting the skin, and preventing infection while monitoring for serious complications. For any burn that’s large, deep, on the face, hands, genitals, or over joints, always seek immediate medical attention.</p>
+        </div>
+    </a>
+
+
+  <div class="col-span-full flex justify-center">
+    <a href="SEIZURE.html" class="block bg-white rounded-lg shadow-md overflow-hidden w-72 hover:shadow-xl transition">
+      <img src="people-with-home-safety-concept.jpg" alt="Seizure First Aid" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold mb-2">Seizure First Aid</h3>
+        <p class="text-sm text-gray-700">
+          Seizure first aid is about staying calm, keeping the person safe, and not interfering with the seizure. Let it run its course, protect them from harm, and monitor them closely. With the right steps, you can provide meaningful help during what can be a frightening event.
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<div x-data="{ show: false }" class="my-6 text-center">
+  <button 
+    @click="show = !show"
+    class="px-6 py-3 bg-[#fbd436] hover:bg-[#e5c22c] text-black font-bold rounded shadow transition">
+    References 
+  </button>
+
+  <div x-show="show" x-transition class="mt-4 bg-white border border-gray-300 p-4 rounded text-left max-w-4xl mx-auto text-sm leading-relaxed">
+    <p><strong>American Heart Association.</strong> (2019). American Heart Association CPR & First Aid. <a href="https://cpr.heart.org/" target="_blank" class="text-blue-600 underline">https://cpr.heart.org/</a></p>
+    
+    <p class="mt-2"><strong>Home | Stop The Bleed.</strong> (2019). <a href="https://www.stopthebleed.org" target="_blank" class="text-blue-600 underline">https://www.stopthebleed.org</a></p>
+    
+    <p class="mt-2"><strong>British Burn Association.</strong> (n.d.). A charity concerned with all aspects of burn care. <a href="https://www.britishburnassociation.org" target="_blank" class="text-blue-600 underline">https://www.britishburnassociation.org</a></p>
+    
+    <p class="mt-2"><strong>NHS.</strong> (2022, June 23). Overview - Burns and Scalds. <a href="https://www.nhs.uk/conditions/burns-and-scalds/" target="_blank" class="text-blue-600 underline">https://www.nhs.uk/conditions/burns-and-scalds/</a></p>
+    
+    <p class="mt-2"><strong>Epilepsy Foundation.</strong> (2017). <a href="https://www.epilepsy.com" target="_blank" class="text-blue-600 underline">https://www.epilepsy.com</a></p>
+    
+    <p class="mt-2"><strong>National Safety Council.</strong> (2019). Our Mission is Safety. <a href="https://www.nsc.org" target="_blank" class="text-blue-600 underline">https://www.nsc.org</a></p>
+  </div>
+</div>
+
+
+
+<footer class="bg-[#45a365] overflow-hidden relative h-[600px]">
+  <div class="w-full h-full flex flex-col justify-center gap-[2px] py-0 fade-scroll">
+
+    <!-- Row 1 - Scroll Left -->
+    <div class="relative z-10 whitespace-nowrap text-[120px] md:text-[160px] font-extrabold uppercase text-stroke-white animate-left leading-[1]">
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+    </div>
+
+    <!-- Row 2 - Scroll Right -->
+    <div class="relative z-10 whitespace-nowrap text-[120px] md:text-[160px] font-extrabold uppercase text-stroke-white animate-right leading-[1]">
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+    </div>
+
+    <!-- Row 3 - Scroll Left -->
+    <div class="relative z-10 whitespace-nowrap text-[120px] md:text-[160px] font-extrabold uppercase text-stroke-white animate-left leading-[1]">
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+      <span class="inline-block mr-12">Medihelp</span>
+    </div>
+
+  </div>
+</footer>
+
+  
+  <footer class="text-center text-sm text-black-600 mt-12 py-4">
+    © 2025 MediHelp. All rights reserved.
+  </footer>
+
+
+
+</body>
+</html>
